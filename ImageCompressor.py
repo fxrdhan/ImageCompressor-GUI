@@ -138,7 +138,7 @@ class ImageCompressorGUI:
         for filename in os.listdir(input_folder):
             if filename.endswith(('.jpg', '.JPG', '.PNG', '.jpeg', '.JPEG', '.png')):
                 image = cv2.imread(os.path.join(input_folder, filename))
-                output_filename = os.path.splitext(filename)[0] + '-compress-quality=' + str(quality) + os.path.splitext(filename)[1]
+                output_filename = os.path.splitext(filename)[0] + '-compressed' + str(quality) + os.path.splitext(filename)[1]
                 output_path = os.path.join(output_folder, output_filename)
                 
                 cv2.imwrite(output_path, image, [cv2.IMWRITE_JPEG_QUALITY, quality])
